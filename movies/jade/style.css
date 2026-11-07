@@ -4,8 +4,7 @@
     font-family: "Futura", "Century Gothic", "Trebuchet MS", sans-serif;
     background: #fff;
   }
- 
-  /* ===== 레이아웃: 왼쪽 고정 + 오른쪽 스크롤 ===== */
+
   .layout {
     display: flex;
   }
@@ -26,7 +25,6 @@
     object-fit: contain;
   }
  
-  /* 오른쪽 콘텐츠: 이 부분만 스크롤됨 */
   .content {
     flex: 1;
     padding: 56px 56px 80px;
@@ -76,7 +74,6 @@
   h2 { font-size: 1.7rem; font-weight: 500; margin-bottom: 14px; }
   h2.right { text-align: right; margin-top: 40px; }
  
-  /* ===== 이미지 / 텍스트 ===== */
   figure img, .img-box {
     display: block;
     width: 100%;
