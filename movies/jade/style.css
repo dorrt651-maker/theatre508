@@ -1,0 +1,115 @@
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+  body {
+    font-family: "Futura", "Century Gothic", "Trebuchet MS", sans-serif;
+    background: #fff;
+  }
+ 
+  /* ===== 레이아웃: 왼쪽 고정 + 오른쪽 스크롤 ===== */
+  .layout {
+    display: flex;
+  }
+
+  .poster {
+    position: sticky;     
+    top: 0;
+    height: 100vh;  
+    width: 36%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .poster img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+ 
+  /* 오른쪽 콘텐츠: 이 부분만 스크롤됨 */
+  .content {
+    flex: 1;
+    padding: 56px 56px 80px;
+    max-width: 900px;
+  }
+ 
+  section { margin-bottom: 72px; }
+ 
+  h1 {
+    font-size: clamp(4rem, 10vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+  }
+  .meta { margin-top: 12px; font-size: .9rem; line-height: 1.7; }
+ 
+  .intro {
+    margin-top: 40px;
+    padding: 15px 15px;
+    background-color:navy;
+    color: #41a9e6;
+    transform: rotate(-3deg);
+    font-size: .99rem;
+    line-height: 1.2;
+  }
+  .intro p + p { margin-top: 14px; }
+
+  .tag {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 28px;
+  }
+  .tag.bg { 
+    background-color:deepskyblue; 
+    color:rgb(53, 40, 36); 
+    transform: rotate(3deg); }
+  .tag.char { 
+    background-color:aquamarine; 
+    color:navy; 
+    transform: rotate(-3deg); }
+  .tag.scene{ 
+    background-color:navy; 
+    color:#41a9e6; 
+    transform: rotate(-6deg); }
+ 
+  h2 { font-size: 1.7rem; font-weight: 500; margin-bottom: 14px; }
+  h2.right { text-align: right; margin-top: 40px; }
+ 
+  /* ===== 이미지 / 텍스트 ===== */
+  figure img, .img-box {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: #cfd8e3;
+  }
+  .img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+  }
+  img {
+  display: block;
+  width: 100%;    
+  height: 100%;    
+  object-fit: cover;
+}
+  .text-orange { color: var(--orange); font-size: .85rem; line-height: 1.7; margin-top: 16px; }
+  .text-teal   { color: var(--teal);   font-size: .85rem; line-height: 1.7; margin-top: 16px; }
+  .text-orange p + p { margin-top: 12px; }
+ 
+  .scenes { display: grid; gap: 16px; }
+ 
+  .cast h3 { font-size: .9rem; font-weight: 700; margin-bottom: 6px; }
+  .cast p  { font-size: .9rem; line-height: 1.6; }
+ 
+  @media (max-width: 720px) {
+    .layout { flex-direction: column; }
+    .poster {
+      position: static;
+      width: 100%;
+      height: 60vh;
+    }
+    .content { padding: 32px 20px 60px; }}
