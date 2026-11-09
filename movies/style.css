@@ -40,3 +40,36 @@ body {
     height: 350px;
     object-fit: cover;
 }
+
+h1 {
+ LTC Broadway Engraved;
+font-family: "ltc-broadway-engraved", sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 35px;
+}
+
+h2 {
+Moonglow Regular;
+font-family: "moonglow", sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 25px;
+ display: inline-block;
+    border: 5px dotted yellow;
+    padding: 5px;
+    position: relative;
+    top: -40px;
+ transition: background-color 0.3s ease;
+}
+
+h2:hover {
+    display: inline-block;
+    position: relative;
+    background-color: rgb(247, 247, 186)
+
+}
+
+h1:hover {
+    font-size:40px;
+    }
