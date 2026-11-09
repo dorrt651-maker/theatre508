@@ -87,20 +87,47 @@
     justify-content: center;
     font-size: .9rem;
   }
+  .img-box-sn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+    aspect-ratio: 16 / 7;
+  }
+
   img {
   display: block;
   width: 100%;    
   height: 100%;    
   object-fit: cover;
 }
-  .text-orange { color: var(--orange); font-size: .85rem; line-height: 1.7; margin-top: 16px; }
-  .text-teal   { color: var(--teal);   font-size: .85rem; line-height: 1.7; margin-top: 16px; }
-  .text-orange p + p { margin-top: 12px; }
+  .text-orange { 
+    font-size: .85rem; 
+    line-height: 1.4;
+    margin-top: 16px; 
+    color:rgb(195, 111, 42);
+  }
+  .text-teal   {   
+    font-size: .85rem; 
+    line-height: 1.4; 
+    margin-top: 16px; 
+    font-weight:400;
+    color:rgb(62, 147, 147);
+  }
  
-  .scenes { display: grid; gap: 16px; }
+  .scenes { 
+    display: grid; 
+    gap: 16px; 
+  }
  
-  .cast h3 { font-size: .9rem; font-weight: 700; margin-bottom: 6px; }
-  .cast p  { font-size: .9rem; line-height: 1.6; }
+  .cast h3 { 
+    font-size: .9rem; 
+    font-weight: 700; 
+    margin-bottom: 6px; }
+  .cast p  { 
+    font-size: .9rem; 
+    line-height: 1.3; 
+  }
  
   @media (max-width: 720px) {
     .layout { flex-direction: column; }
