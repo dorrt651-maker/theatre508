@@ -2,6 +2,7 @@
  
   body {
     font-family: "Futura", "Century Gothic", "Trebuchet MS", sans-serif;
+    background-color: white;
   }
 
   .layout {
@@ -30,7 +31,9 @@
     max-width: 900px;
   }
  
-  section { margin-bottom: 72px; }
+  section { 
+    margin-bottom: 72px; 
+  }
  
   h1 {
     font-size: clamp(4rem, 10vw, 7rem);
@@ -70,8 +73,16 @@
     color:#41a9e6; 
     transform: rotate(-6deg); }
  
-  h2 { font-size: 1.7rem; font-weight: 500; margin-bottom: 14px; }
-  h2.right { text-align: right; margin-top: 40px; }
+  h2 { 
+    font-size: 1.7rem; 
+    font-weight: 500; 
+    margin-bottom: 14px; 
+  }
+
+  h2.right { 
+    text-align: right; 
+    margin-top: 40px; 
+  }
  
   figure img, .img-box {
     display: block;
