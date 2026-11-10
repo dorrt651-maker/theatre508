@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About the Film · Coraline</title>
+<link rel="stylesheet" href="detail.css">
+
+<style>
+.film-info { padding-left: 2px; }
+.film-intro { margin: 0 0 14px; font-size: .95rem; line-height: 1.5; }
+.film-facts { margin: 0; }
+.film-facts > div { display: grid; grid-template-columns: 42% 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(76,93,152,.35); }
+.film-facts dt { font-size: .75rem; letter-spacing: .07em; text-transform: uppercase; color: #4c5d98; line-height: 1.5; }
+.film-facts dd { margin: 0; font-size: 1rem; line-height: 1.4; }
+.film-facts dd span { display: block; font-size: .8rem; }
+.film-note { font-style: italic; font-size: .88rem; line-height: 1.5; margin: 16px 0; }
+.film-sources { font-size: .73rem; line-height: 1.5; padding-bottom: 16px; }
+.film-sources a { color: #4c5d98; text-decoration: underline; }
+.film-info:focus-visible { outline: 2px solid #4c5d98; outline-offset: 3px; }
+@media (max-width: 420px) { .film-facts > div { grid-template-columns: 1fr; gap: 3px; } }
+</style>
+<link rel="stylesheet" href="atmosphere.css">
+</head>
+<body class="detail">
+
+
+<div class="home-icon">
+  <a href="/movies/index.html" aria-label="Back to Class Zine"><img class="home-png" src="images/homeicone.png" alt="Home"></a>
+</div>
+
+<div class="layout">
+  
+  <nav class="rail" aria-label="Zine menu">
+    <ul class="train">
+      <li><a class="engine" href="index.html"><span class="engine-art" aria-hidden="true"></span><span class="tag">Back to the Table</span></a></li>
+      <li><a class="car" href="characters.html"><img src="images/cat.png" alt=""><span class="tag">Characters</span></a></li>
+      <li><a class="car" href="about.html" aria-current="page"><img src="images/doll.png" alt=""><span class="tag">About the Film</span></a></li>
+      <li><a class="car" href="story.html"><img src="images/cake.png" alt=""><span class="tag">The Story</span></a></li>
+      <li><a class="car" href="visual-world.html"><img src="images/button.png" alt=""><span class="tag">Visual World</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="main">
+    <img class="logo" src="images/coraline-logo.webp" alt="Coraline">
+
+    <section class="plate" aria-labelledby="page-title">
+      <div class="plate-inner">
+        <h1 id="page-title">About the Film</h1>
+        <p class="sub">A little door. A handmade world.</p>
+        <div class="scroll film-info" tabindex="0" aria-label="Film information">
+          <p class="film-intro">Step into the world of <em>Coraline</em>, a stop-motion animated film directed by Henry Selick.</p>
+          <dl class="film-facts">
+            <div><dt>Movie</dt><dd>Coraline</dd></div>
+            <div><dt>Director</dt><dd>Henry Selick</dd></div>
+            <div><dt>Studio</dt><dd>LAIKA</dd></div>
+            <div><dt>U.S. distributor</dt><dd>Focus Features</dd></div>
+            <div><dt>Year</dt><dd>2009</dd></div>
+            <div><dt>U.S. theatrical release</dt><dd>February 6, 2009</dd></div>
+            <div><dt>Running time</dt><dd>100 minutes <span>(1 hour 40 minutes)</span></dd></div>
+            <div><dt>Animation</dt><dd>Stop-motion</dd></div>
+          </dl>
+          <p class="film-note">Real puppets and miniature sets give this strange world its handmade character.</p>
+          <footer class="film-sources">Sources:
+            <a href="https://www.focusfeatures.com/article/coraline_2017_eighth-anniversary">Focus Features</a>
+            <span aria-hidden="true"> · </span>
+            <a href="https://www.classification.gov.au/titles/coraline-0">Australian Classification</a>
+          </footer>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>
