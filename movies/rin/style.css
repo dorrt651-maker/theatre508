@@ -25,10 +25,44 @@ img[alt="exclude.1.png"]{
 }
 .image-containter img{
     width: 100vw;
-    he
-    ight: 100vh;
+    height: 100vh;
     object-fit: cover;
     /* top:-526px; */
+}
+.toptext{
+    position:relative;
+    display:grid;
+    z-index:2;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.shippori-mincho-regular {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h2{
+    position: absolute;
+    display:grid;
+    font-size: 24px;
+    font-family: "Shippori Mincho", serif;
+}
+span{
+    font-weight: bold;
+    color: red;
+    font-size:40px;
+}
+.text1{
+    grid-row-start: 1 / 2;
+    grid-column-end: 4;
+}
+.text2{
+    grid-row: 2 / 3;
+    grid-column-end: 4;
+}
+.text3{
+    grid-row: 3 / 4;
+    grid-column-end: 4;
 }
 .movie-details{
     background: linear-gradient(to bottom, white, red);
@@ -36,9 +70,4 @@ img[alt="exclude.1.png"]{
     top: 300px;
     width: 100vw;
     height: 3000px;
-}
-h2{
-    position: absolute;
-    font-size: 24px;
-
 }
