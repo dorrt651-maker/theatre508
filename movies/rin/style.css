@@ -1,0 +1,8 @@
+.mask1 {
+  mask-image: url(exclude.png);
+}
+.masksource{
+    background: url(image.jpg);
+    background-size: cover;
+    background-position: center;
+}
