@@ -11,25 +11,94 @@ img[alt="exclude.1.png"]{
     height: auto;
     z-index:0;
     position: absolute;
-    top: 300px;
+    top: 700px;
     left: 0;
 }
 .image-containter{
-    position:relative;
-    height:1500px;
-    display: flex;
-    align-items: flex-end;
-}
-img[alt="image.jpg"]{
     width: 100vw;
-    height: auto;
+    height: 1100px;
     z-index: -100;
     position: sticky;
-    top: 100px;
-    align-self:flex-end;
-} 
-h2{
-    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+}
+.image-containter img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /* top:-526px; */
+}
+.toptext{
+    position:relative;
+    display:flex;
+    z-index:2;
+    flex-direction:column;
+    justify-content: flex-end; 
+}
+.text{
     font-size: 24px;
+    font-family: "Shippori Mincho", serif;  
+    text-align: right; 
+    justify-content:flex-start;
+}
+span{
+    font-weight: bold;
+    color: red;
+    font-size:40px;
+}
+.movie-details{
+    background: linear-gradient(to bottom, white, red);
+    position: relative;
+    top: 300px;
+    width: 100vw;
+    height: 3000px;
+    font-family: "Shippori Mincho", serif;
+    color: white;
+}
+.casts{
+    position:absolute;
+    top: 375px;
+    text-align: center;
+    font-weight: 100;
+}
+.starring{
+    position:absolute;
+    text-align: center;
+    font-family: "Shippori Mincho", serif;
+    color: white;
+    font-size:24px;
+    margin-top: 100px;
+    left: 663px;
+}
+.cast{
+    position:absolute;
+    font-size: 35px;
+    margin-top: 150px;
+    left: 180px;
+    display:grid; 
+    grid-template-columns: repeat(2, 500px);
+    gap: 50px;
+}
+.description{
+    position:absolute;
+    top: 50%;
+    font-size:24px;
+    text-align: center;
+}
 
+img[alt="Group2.png"]{
+    width: auto;
+    height:auto;
+    position:relative;
+    display:flex;
+    margin-inline: auto;
+    top: 2200px;
+}
+h4{
+    text-align: center;
+    position:relative;
+    top: 1750px;
+    font-size:48px;
+    letter-spacing:53%;
 }
