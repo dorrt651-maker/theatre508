@@ -50,7 +50,7 @@ span{
 .movie-details{
     background: linear-gradient(to bottom, white, red);
     position: relative;
-    top: 300px;
+    top: 350px;
     width: 100vw;
     height: 3000px;
     font-family: "Shippori Mincho", serif;
@@ -82,24 +82,26 @@ span{
     letter-spacing:10%;
 }
 .description{
-    position:absolute;
+    position:relative;
     top: 50%;
     font-size:24px;
-    text-align: center;
+    display:grid;
+    flex-direction: column;
+    place-items:center;
 }
 
 img[alt="Group2.png"]{
     width: auto;
     height:auto;
-    position:relative;
-    display:flex;
-    margin-inline: auto;
+    position:absolute;
+    inset:0;
+    margin: auto;
     top: 2200px;
 }
 h4{
     text-align: center;
     position:relative;
-    top: 1750px;
+    top: 80%;
     font-size:48px;
     letter-spacing:53%;
 }
