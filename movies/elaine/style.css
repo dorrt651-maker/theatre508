@@ -118,6 +118,21 @@ header p {
     margin: 0;
 }
 
+.trailer h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0px 0px 25px 0px;
+}
+
+.trailer {
+    display: inline-block;
+    text-decoration: underline;
+    border: 1px solid black;
+    padding: 8px 10px;
+    margin-top: 28px;
+    background-color: gainsboro;
+}
+
 .home-icon {
   border-radius:50%;
   background-color: white;

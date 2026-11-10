@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pride & Prejudice</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #5a6258;
+            color: white;
+        }
+
+        .page {
+            position: relative;
+            min-height: 100vh;
+            background-image: url("IMG_9302.JPG");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        h1, h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        .small-text {
+            position: absolute;
+            top: 18px;
+            left: 50px;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .title {
+            position: absolute;
+            top: 70px;
+            left: 50px;
+        }
+
+        .title h1 {
+            font-size: 104px;
+            line-height: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .film-year {
+            font-size: 16px;
+        }
+
+        .quote {
+            position: absolute;
+            left: 50px;
+            bottom: 120px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            font-style: italic;
+            line-height: 1.2;
+            max-width: 430px;
+        }
+
+        .information {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 58%;
+            max-width: 820px;
+            display: flex;
+            gap: 28px;
+            background-color: rgba(50, 40, 30, 0.5);
+            padding: 22px 24px;
+            box-sizing: border-box;
+        }
+
+        .details,
+        .cast,
+        .synopsis {
+            box-sizing: border-box;
+        }
+
+        .details {
+            width: 28%;
+        }
+
+        .cast {
+            width: 25%;
+        }
+
+        .synopsis {
+            width: 47%;
+        }
+
+        .information h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .information p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .home-icon {
+            border-radius: 50%;
+            background-color: white;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            padding: 5px;
+            box-shadow: 2px 1px 5px #335585;
+            z-index: 10;
+        }
+
+        .home-png {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="../index.html">
+        <div class="home-icon">
+            <img class="home-png" src="home.png" alt="Home">
+        </div>
+    </a>
+
+    <div class="page">
+
+        <p class="small-text">FILM ZINE</p>
+
+        <div class="title">
+            <h1>PRIDE &<br>PREJUDICE</h1>
+            <p class="film-year">
+                A FILM BY JOE WRIGHT · 2005
+            </p>
+        </div>
+
+        <p class="quote">
+            "You have bewitched me,<br>
+            body and soul."
+        </p>
+
+        <div class="information">
+
+            <div class="details">
+                <h2>Film Details</h2>
+                <p>Director: Joe Wright</p>
+                <p>Studio: Working Title Films</p>
+                <p>Year: 2005</p>
+                <p>Runtime: 127 minutes</p>
+            </div>
+
+            <div class="cast">
+                <h2>Cast</h2>
+                <p>Keira Knightley</p>
+                <p>Matthew Macfadyen</p>
+                <p>Rosamund Pike</p>
+                <p>Donald Sutherland</p>
+            </div>
+
+            <div class="synopsis">
+                <h2>Synopsis</h2>
+                <p>
+                    Elizabeth Bennet meets the wealthy Mr. Darcy.
+                    Despite their pride and misunderstandings,
+                    they slowly fall in love.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
