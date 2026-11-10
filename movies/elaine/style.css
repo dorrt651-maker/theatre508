@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px 48px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 10px 10px;
+    color: gray;
+    font-size: 18px;
+}
+
+header p {
+    margin: 0;
+}
+
+.year {
+    margin-right: 25px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.left {
+    padding: 0px 20px;
+}
+
+.movie-title {
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+.movie-title h1 {
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0px 25px 0px 0px;
+}
+
+.movie-title h2 {
+    font-size: 38px;
+    font-weight: 400;
+    color: gray;
+    margin: 5px 0px;
+}
+
+.characters h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0px 0px 25px 0px;
+}
+
+.synopsis h3{
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0px 0px 25px 0px;
+}
+
+.runtime h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0px 0px 25px 0px;
+}
+
+.character {
+    margin-bottom: 28px;
+}
+
+.character p {
+    color: gray;
+    font-size: 18px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.runtime {
+    margin-top: 35px;
+}
+
+.runtime p {
+    color: gray;
+    font-size: 18px;
+    margin: 0;
+}
+
+.right {
+    padding-right: 20px;
+}
+
+.movie-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.synopsis {
+    margin-top: 65px;
+}
+
+.synopsis p {
+    color: gray;
+    font-size: 18px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.home-icon {
+  border-radius:50%;
+  background-color: white;
+  width:50px;
+  height:50px;
+  position:fixed;
+  right:10px;
+  top:10px;
+  padding:5px;
+  box-shadow: 2px 1px 5px #335585;
+}
+
+.home-png {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

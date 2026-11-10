@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Visual World · Coraline</title>
+<link rel="stylesheet" href="detail.css">
+<style>
+.visual-page .main { background: radial-gradient(ellipse at 95% 15%, rgba(206,241,246,.5), transparent 55%), linear-gradient(110deg,#1a1038 0%,#45226d 35%,#277d9e 72%,#65c4dc 100%); }
+.visual-page .plate-inner { inset: 19% 18%; }
+.visual-page .plate h1 { font-size: clamp(1.5rem,2.8vw,2.25rem); }
+.visual-copy { padding-right: 12px; }
+.poster { margin: 0 0 18px; text-align: center; }
+.poster img { display: block; width: min(100%,220px); height:auto; margin:auto; border-radius:3px; }
+.poster figcaption,.visual-copy .palette-note { font-size:.7rem; line-height:1.5; color:#5c4c62; margin:8px 0 16px; }
+.visual-copy h2 { font-size:1.12rem; margin:20px 0 8px; }
+.visual-copy p { font-size:.92rem; line-height:1.6; margin:0 0 14px; }
+.palette { list-style:none; padding:0; margin:12px 0; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; }
+.palette li { display:flex; flex-direction:column; gap:5px; font-size:.65rem; }
+.swatch { height:42px; border-radius:4px; border:1px solid rgba(42,22,51,.2); }
+.palette code { font-size:.6rem; }
+.visual-copy:focus-visible { outline:2px solid #4c5d98; outline-offset:3px; }
+@media(max-width:820px) { .visual-page .plate-inner { padding:34px 28px; } .visual-copy { padding-right:0; } }
+@media(max-width:400px) { .palette { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+</style>
+<link rel="stylesheet" href="atmosphere.css">
+</head>
+<body class="detail visual-page">
+
+
+<div class="home-icon">
+  <a href="/movies/index.html" aria-label="Back to Class Zine"><img class="home-png" src="images/homeicone.png" alt="Home"></a>
+</div>
+
+<div class="layout">
+  
+  <nav class="rail" aria-label="Zine menu">
+    <ul class="train">
+      <li><a class="engine" href="index.html"><span class="engine-art" aria-hidden="true"></span><span class="tag">Back to the Table</span></a></li>
+      <li><a class="car" href="characters.html"><img src="images/cat.png" alt=""><span class="tag">Characters</span></a></li>
+      <li><a class="car" href="about.html"><img src="images/doll.png" alt=""><span class="tag">About the Film</span></a></li>
+      <li><a class="car" href="story.html"><img src="images/cake.png" alt=""><span class="tag">The Story</span></a></li>
+      <li><a class="car" href="visual-world.html" aria-current="page"><img src="images/button.png" alt=""><span class="tag">Visual World</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="main">
+    <img class="logo" src="images/coraline-logo.webp" alt="Coraline">
+
+    <section class="plate" aria-labelledby="page-title">
+      <div class="plate-inner">
+        <h1 id="page-title">Visual World</h1>
+        <p class="sub">Between shadow and wonder.</p>
+        <div class="scroll visual-copy" tabindex="0" aria-label="Two scenes and their colors">
+          <figure class="scene"><img src="images/world-real.webp" alt="The Pink Palace in daylight, with muted green hills, a dusty pink house and a pale blue sky."><figcaption>The Real World · Daylight</figcaption></figure>
+          <ul class="scene-palette"><li><span style="background:#636E4A"></span><code>#636E4A</code></li><li><span style="background:#B1865E"></span><code>#B1865E</code></li><li><span style="background:#91B7BE"></span><code>#91B7BE</code></li><li><span style="background:#4B3F31"></span><code>#4B3F31</code></li></ul>
+          <p>Muted greens, dusty pink and earthy browns make the house feel weathered and familiar. Soft daylight reveals the landscape and the winding path.</p>
+          <figure class="scene"><img src="images/world-other.jpg" alt="The Other World Pink Palace at night, surrounded by deep blue shadows, glowing windows and a sculpted garden."><figcaption>The Other World · Night</figcaption></figure>
+          <ul class="scene-palette"><li><span style="background:#0A0D1C"></span><code>#0A0D1C</code></li><li><span style="background:#2E406E"></span><code>#2E406E</code></li><li><span style="background:#64415F"></span><code>#64415F</code></li><li><span style="background:#E09F5B"></span><code>#E09F5B</code></li></ul>
+          <p>Deep blues and violet shadows surround the house. Warm windows stand out in the darkness, making the building feel inviting and theatrical.</p>
+          <h2>The same house, a different feeling</h2>
+          <p>The familiar shape of the Pink Palace connects these images, while lighting and color change its mood. The daylight scene feels grounded; the night scene draws attention to small pools of warm light.</p>
+          <p class="palette-note">A visual reading of these two selected stills. They show different times of day as well as different worlds, so the contrast is not caused by world alone. Swatches are representative colors sampled from the supplied images, not an official film palette.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coraline · Come to the Table</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0b0818; }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+
+  /* 무대: 160 x 90 단위. 1em = 1단위. 화면 크기에 맞춰 통째로 확대/축소됨 */
+  .stage {
+    --ease: cubic-bezier(.12, .55, .25, 1);   /* 부드러운 감속 곡선 */
+    --dur: 7.5s;                              /* 이동 시간 */
+    --delay: 1s;                              /* 시작 전 대기 */
+    font-size: min(calc(100vw / 160), calc(100svh / 90));
+    width: 160em; height: 90em; position: relative; overflow: hidden;
+    background: linear-gradient(#1a1240 0%, #241649 45%, #14102e 100%);
+  }
+  .stage > * { position: absolute; }
+
+  /* ── 배경 · 식탁 ── */
+  .lamp { inset: 0; background: radial-gradient(ellipse 60% 45% at 50% 70%, rgba(255,176,86,.55), rgba(255,140,60,.12) 55%, transparent 75%); }
+  .table {
+    left: 0; top: 52em; width: 160em; height: 38em;
+    background: linear-gradient(#a8603a 0%, #7a3b2c 55%, #4a2230 100%);
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+  }
+  .table::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 50% 35%, rgba(255,200,120,.35), transparent 70%); }
+  .edge { left: 0; top: 81em; width: 160em; height: 9em; background: linear-gradient(#3a1a26, #1c0e18); border-top: .4em solid #c98a55; box-sizing: border-box; }
+  .track { left: 6em; top: 66.6em; width: 148em; height: 2.2em; border-top: .3em solid #4a2c20; border-bottom: .3em solid #4a2c20; box-sizing: border-box; background: repeating-linear-gradient(90deg, rgba(30,15,10,.55) 0 .5em, transparent .5em 2.5em); }
+  .vignette { inset: 0; background: radial-gradient(ellipse 75% 75% at 50% 60%, transparent 55%, rgba(5,3,15,.8) 100%); pointer-events: none; z-index: 5; }
+
+  /* ── 기차 (부모 하나가 전부 운반: 아이템은 객차의 자식) ── */
+  .train { left: 37.75em; top: 38em; width: 110.5em; height: 30.5em; z-index: 2; }
+  .play .train { animation: enter var(--dur) var(--ease) var(--delay) both; }
+  @keyframes enter { from { transform: translateX(-150em); } to { transform: none; } }
+
+  .car { bottom: 0; width: 20em; height: 30.5em; }
+  .car:nth-child(1) { left: 0; }
+  .car:nth-child(2) { left: 21.5em; }
+  .car:nth-child(3) { left: 43em; }
+  .car:nth-child(4) { left: 64.5em; }
+  .train > *, .car > *, .engine > * { position: absolute; }
+  /* 화물칸: 뒤쪽 벽(.deck) → 아이템 → 앞쪽 벽(::after) 순으로 겹쳐서 아이템이 칸 안에 실린 것처럼 보임 */
+  .deck { left: 0; right: 0; bottom: 2.5em; height: 13em; z-index: 0; background: linear-gradient(#2a1020, #4a1c30); border: .3em solid #c98a55; border-radius: .8em .8em .4em .4em; box-sizing: border-box; }
+  .car::after { content: ""; position: absolute; left: -.3em; right: -.3em; bottom: 2.5em; height: 9em; z-index: 2; box-sizing: border-box; border: .3em solid #c98a55; border-radius: .4em; background: repeating-linear-gradient(90deg, rgba(0,0,0,.18) 0 .25em, transparent .25em 3em), linear-gradient(#9a4458, #6a2438); box-shadow: 0 -.6em 1em rgba(0,0,0,.35); }
+  /* 아이템 이미지: 비율 유지(contain), 칸 바닥에 맞춤. 아이템별 --h(높이) --x(좌우) --y(위아래)로 조절 */
+  .item { left: calc(.5em + var(--x, 0em)); bottom: calc(8.5em + var(--y, 0em)); width: 19em; height: var(--h, 18em); object-fit: contain; object-position: center bottom; display: block; z-index: 1; }
+  .item-cat    { --h: 16em; }
+  .item-doll   { --h: 19em; }
+  .item-cake   { --h: 16.5em; }
+  .item-button { --h: 16em; }
+  .coupler { bottom: 4em; height: .8em; background: #2a1a1a; }
+
+  .wheel { bottom: 0; z-index: 3; border-radius: 50%; border: .4em solid #2a1a1a; background: #9a7440; box-sizing: border-box; }
+  .wheel::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: linear-gradient(#2a1a1a, #2a1a1a) center/100% .35em no-repeat, linear-gradient(#2a1a1a, #2a1a1a) center/.35em 100% no-repeat; }
+  .car .wheel { width: 5em; height: 5em; --spin: -3440deg; }
+  .engine .wheel { width: 7em; height: 7em; --spin: -2455deg; }
+  .play .wheel { animation: spin var(--dur) var(--ease) var(--delay) both; }  /* 기차와 같은 곡선 → 바퀴도 함께 감속 */
+  @keyframes spin { from { transform: rotate(var(--spin)); } to { transform: none; } }
+
+  .engine { left: 86.5em; bottom: 0; width: 24em; height: 28em; }
+  .engine svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  /* ── 손 (화면 아래 좌우, 기차를 가리지 않음) ── */
+  .hand { bottom: -4em; width: 28em; height: 20em; z-index: 3; }
+  .hand.l { left: 8em; }
+  .hand.r { right: 8em; transform: scaleX(-1); }
+
+  /* ── 프로토타입 표시 ── */
+  .replay { left: 2em; top: 2em; z-index: 9; font: 1.6em system-ui, sans-serif; color: #e9dcff; background: rgba(20,12,45,.7); border: 1px solid #6a58a8; padding: .4em .9em; border-radius: .5em; cursor: pointer; }
+
+
+
+  /* 아이템 링크: 이동 애니메이션은 .train에만 있고, 호버 효과는 이미지(.item)에만 적용 → 서로 덮어쓰지 않음 */
+  .car > .item-link { position: static; text-decoration: none; }
+  .item, .item-label { position: absolute; }   /* 링크 안으로 들어갔으므로 위치 지정을 직접 */
+  .item { transition: transform .25s ease, filter .25s ease; }
+  .item-label { left: 50%; bottom: 3.4em; transform: translateX(-50%); z-index: 3; white-space: nowrap; font: 700 2em/1 Georgia, "Times New Roman", serif; color: #2a1020; background: #f2e2b8; border: .2em solid #c98a55; border-radius: .4em; padding: .35em .8em; }
+  .item-link:hover .item, .item-link:focus-visible .item { transform: translateY(-1em); filter: brightness(1.18) drop-shadow(0 0 .8em rgba(255,200,120,.7)); }
+  .item-link:focus-visible { outline: none; }
+  .item-link:focus-visible .item-label { outline: .3em solid #fff; outline-offset: .2em; background: #fff3cf; }
+
+  /* 영화 제목 */
+  .title { margin: 0; left: 0; right: 0; top: 4em; z-index: 4; pointer-events: none; }
+  .title-logo { display: block; width: 34em; max-width: 90%; height: auto; margin: 0 auto; filter: invert(1); } /* 검은 로고 → 흰색 */
+
+  /* 홈 버튼 (수업 제공 코드 + z-index) */
+  .home-icon { border-radius: 50%; background-color: white; width: 50px; height: 50px; position: fixed; right: 10px; top: 10px; padding: 5px; box-shadow: 2px 1px 5px #335585; text-decoration: none; z-index: 100; box-sizing: border-box; }
+  .home-png { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+  /* 손 커서: 마우스가 있는 기기에서만. 파일이 없으면 기본 커서 */
+  @media (hover: hover) and (pointer: fine) {
+    html, body, a, button, .stage, .stage * { cursor: url("images/hand-cursor.svg") 38 8, auto; }
+  }
+
+  /* 모션 감소: 입장 없이 정차한 상태로 */
+  @media (prefers-reduced-motion: reduce) {
+    .play .train, .play .wheel { animation: none; }
+    .item { transition: none; }
+  }
+</style>
+<link rel="stylesheet" href="main-atmosphere.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- [교체] 손 이미지: 이 symbol 대신 <img src="hand.png">를 .hand 안에 넣으면 됩니다 -->
+    <symbol id="hand" viewBox="0 0 200 140">
+      <path d="M0 140 L0 80 Q50 52 100 66 L122 140 Z" fill="#e0a82a"/>
+      <ellipse cx="128" cy="86" rx="40" ry="26" fill="#efcdb6"/>
+      <g fill="#efcdb6">
+        <rect x="140" y="56" width="52" height="12" rx="6" transform="rotate(-22 140 62)"/>
+        <rect x="150" y="72" width="50" height="12" rx="6" transform="rotate(-8 150 78)"/>
+        <rect x="150" y="88" width="48" height="12" rx="6" transform="rotate(6 150 94)"/>
+        <rect x="140" y="102" width="40" height="11" rx="5.5" transform="rotate(18 140 108)"/>
+        <rect x="104" y="52" width="40" height="13" rx="6.5" transform="rotate(-48 108 58)"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<main class="stage play" id="stage" aria-label="코렐라인 식탁 위 기차 (임시 그래픽)">
+  <!-- [교체] 배경 이미지: .stage의 background -->
+  <div class="lamp"></div>
+  <h1 class="title"><img class="title-logo" src="images/coraline-logo.webp" alt="Coraline"></h1>
+  <!-- [교체] 식탁 이미지: .table / .edge / .track -->
+  <div class="table"></div>
+  <div class="track"></div>
+  <div class="edge"></div>
+
+  <!-- 기차 전체 = 부모 하나. 이 요소만 움직입니다 -->
+  <div class="train">
+    <!-- 객차 1: 검은 고양이 -->
+    <div class="car">
+      <div class="deck"></div>
+      <a class="item-link" href="characters.html">
+        <img class="item item-cat" src="images/cat.png" alt="">
+        <span class="item-label">Characters</span>
+      </a>
+      <div class="wheel" style="left:3em"></div><div class="wheel" style="left:12em"></div>
+    </div>
+
+    <!-- 객차 2: 코렐라인 인형 -->
+    <div class="car">
+      <div class="deck"></div>
+      <a class="item-link" href="about.html">
+        <img class="item item-doll" src="images/doll.png" alt="">
+        <span class="item-label">About the Film</span>
+      </a>
+      <div class="wheel" style="left:3em"></div><div class="wheel" style="left:12em"></div>
+    </div>
+
+    <!-- 객차 3: 케이크 -->
+    <div class="car">
+      <div class="deck"></div>
+      <a class="item-link" href="story.html">
+        <img class="item item-cake" src="images/cake.png" alt="">
+        <span class="item-label">The Story</span>
+      </a>
+      <div class="wheel" style="left:3em"></div><div class="wheel" style="left:12em"></div>
+    </div>
+
+    <!-- 객차 4: 단추 -->
+    <div class="car">
+      <div class="deck"></div>
+      <a class="item-link" href="visual-world.html">
+        <img class="item item-button" src="images/button.png" alt="">
+        <span class="item-label">Visual World</span>
+      </a>
+      <div class="wheel" style="left:3em"></div><div class="wheel" style="left:12em"></div>
+    </div>
+
+    <!-- 연결 고리: 객차 사이, 마지막 객차와 기관차 사이 -->
+    <div class="coupler" style="left:19.8em;width:1.9em"></div>
+    <div class="coupler" style="left:41.3em;width:1.9em"></div>
+    <div class="coupler" style="left:62.8em;width:1.9em"></div>
+    <div class="coupler" style="left:84.3em;width:2.4em"></div>
+
+    <!-- 기관차 (오른쪽이 진행 방향) -->
+    <!-- [교체] 기관차 이미지: .engine 안의 svg를 <img src="engine.png">로 -->
+    <div class="engine">
+      <svg viewBox="0 0 120 140" role="img" aria-label="기관차">
+        <circle cx="94" cy="24" r="9" fill="#cfc4e8" opacity=".35"/><circle cx="104" cy="10" r="7" fill="#cfc4e8" opacity=".22"/>
+        <path d="M86 36 H112 L106 58 H92Z" fill="#c98a55"/>
+        <rect x="52" y="58" width="64" height="52" rx="8" fill="#2f2a44"/>
+        <rect x="52" y="70" width="64" height="5" fill="#c98a55"/>
+        <rect x="4" y="30" width="50" height="84" rx="5" fill="#7a2a3c"/>
+        <rect x="0" y="26" width="58" height="8" rx="3" fill="#c98a55"/>
+        <rect x="14" y="44" width="26" height="24" rx="3" fill="#ffd27a"/>
+        <circle cx="114" cy="88" r="5" fill="#ffe9a0"/>
+        <rect x="2" y="108" width="116" height="10" rx="3" fill="#1c1a2c"/>
+      </svg>
+      <div class="wheel" style="left:4em"></div><div class="wheel" style="left:13em"></div>
+    </div>
+  </div>
+
+  <!-- 손: 화면 아래 좌우 -->
+  <img class="hand l" src="images/raincoat-hand.png" alt="" aria-hidden="true">
+  <img class="hand r" src="images/raincoat-hand.png" alt="" aria-hidden="true">
+
+  <div class="vignette"></div>
+  <button class="replay" id="replay" type="button">↻ Replay</button>
+</main>
+
+<!-- 홈 버튼: .stage 바깥(화면 고정). 경로는 수업 지정값 -->
+<div class="home-icon">
+  <a href="/movies/index.html" aria-label="Back to Class Zine">
+    <img class="home-png" src="images/homeicone.png" alt="Home">
+  </a>
+</div>
+
+<script>
+  /* 개발용: 다시 보기 버튼 (최종 사이트에서는 제거) */
+  const stage = document.getElementById('stage');
+  document.getElementById('replay').onclick = () => {
+    stage.classList.remove('play'); void stage.offsetWidth; stage.classList.add('play');
+  };
+</script>
+</body>
+</html>
