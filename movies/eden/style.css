@@ -20,15 +20,23 @@ body {
 
 .home-icon {
   border-radius:50%;
-  background-color: #f4eedd;
+  background-color: white;
   width:50px;
   height:50px;
   position:fixed;
   right:10px;
   top:10px;
   padding:5px;
+  box-shadow: 2px 1px 5px #335585;
+  text-decoration: none;
   
 }
+.home-png {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 img {
   width: 100%;
   height: 100%;
