@@ -128,5 +128,11 @@ h4{
     font-size: 20px;
     position:absolute;
     bottom: 10px;
-    
+    margin-left:10px;
+}
+.year{
+    font-size: 20px;
+    position:absolute;
+    bottom: 10px;
+    margin-left:1375px;
 }
