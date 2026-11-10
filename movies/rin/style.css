@@ -11,7 +11,7 @@ img[alt="exclude.1.png"]{
     height: auto;
     z-index:0;
     position: absolute;
-    top: 500px;
+    top: 700px;
     left: 0;
 }
 .image-containter{
@@ -31,38 +31,21 @@ img[alt="exclude.1.png"]{
 }
 .toptext{
     position:relative;
-    display:grid;
+    display:flex;
     z-index:2;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction:column;
+    justify-content: flex-end; 
 }
-.shippori-mincho-regular {
-  font-family: "Shippori Mincho", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-h2{
-    position: absolute;
-    display:grid;
+.text{
     font-size: 24px;
-    font-family: "Shippori Mincho", serif;
+    font-family: "Shippori Mincho", serif;  
+    text-align: right; 
+    justify-content:flex-start;
 }
 span{
     font-weight: bold;
     color: red;
     font-size:40px;
-}
-.text1{
-    grid-row-start: 1 / 2;
-    grid-column-end: 4;
-}
-.text2{
-    grid-row: 2 / 3;
-    grid-column-end: 4;
-}
-.text3{
-    grid-row: 3 / 4;
-    grid-column-end: 4;
 }
 .movie-details{
     background: linear-gradient(to bottom, white, red);
@@ -70,4 +53,52 @@ span{
     top: 300px;
     width: 100vw;
     height: 3000px;
+    font-family: "Shippori Mincho", serif;
+    color: white;
+}
+.casts{
+    position:absolute;
+    top: 375px;
+    text-align: center;
+    font-weight: 100;
+}
+.starring{
+    position:absolute;
+    text-align: center;
+    font-family: "Shippori Mincho", serif;
+    color: white;
+    font-size:24px;
+    margin-top: 100px;
+    left: 663px;
+}
+.cast{
+    position:absolute;
+    font-size: 35px;
+    margin-top: 150px;
+    left: 180px;
+    display:grid; 
+    grid-template-columns: repeat(2, 500px);
+    gap: 50px;
+}
+.description{
+    position:absolute;
+    top: 50%;
+    font-size:24px;
+    text-align: center;
+}
+
+img[alt="Group2.png"]{
+    width: auto;
+    height:auto;
+    position:relative;
+    display:flex;
+    margin-inline: auto;
+    top: 2200px;
+}
+h4{
+    text-align: center;
+    position:relative;
+    top: 1750px;
+    font-size:48px;
+    letter-spacing:53%;
 }
