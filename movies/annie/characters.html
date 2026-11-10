@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Characters · Coraline</title>
+<link rel="stylesheet" href="detail.css">
+<link rel="stylesheet" href="atmosphere.css">
+</head>
+<body class="detail">
+
+<!-- 홈 버튼: 반 전체 홈페이지 -->
+<div class="home-icon">
+  <a href="/movies/index.html" aria-label="Back to Class Zine"><img class="home-png" src="images/homeicone.png" alt="Home"></a>
+</div>
+
+<div class="layout">
+  <!-- 세로 기차 메뉴 (4개 페이지에서 동일. 현재 페이지에만 aria-current="page") -->
+  <nav class="rail" aria-label="Zine menu">
+    <ul class="train">
+      <li><a class="engine" href="index.html"><span class="engine-art" aria-hidden="true"></span><span class="tag">Back to the Table</span></a></li>
+      <li><a class="car" href="characters.html" aria-current="page"><img src="images/cat.png" alt=""><span class="tag">Characters</span></a></li>
+      <li><a class="car" href="about.html"><img src="images/doll.png" alt=""><span class="tag">About the Film</span></a></li>
+      <li><a class="car" href="story.html"><img src="images/cake.png" alt=""><span class="tag">The Story</span></a></li>
+      <li><a class="car" href="visual-world.html"><img src="images/button.png" alt=""><span class="tag">Visual World</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="main">
+    <img class="logo" src="images/coraline-logo.webp" alt="Coraline">
+
+    <section class="plate" aria-labelledby="page-title">
+      <div class="plate-inner">
+        <h1 id="page-title">Characters</h1>
+        <p class="sub">Meet the faces of Coraline.</p>
+
+        <!-- 접시 안 스크롤 영역: 내용이 길어져도 글자를 줄이지 않고 스크롤 -->
+        <div class="scroll" tabindex="0" aria-label="Character list">
+          <!-- 사진 위치 조정: detail.css 의 .photo-coraline 등에서 object-position 값을 바꾸세요 -->
+          <article class="entry">
+            <img class="photo photo-coraline" src="images/character-coraline.png" alt="Coraline Jones">
+            <div>
+              <h2>Coraline Jones</h2>
+              <p class="voice">Voice: Dakota Fanning</p>
+              <p>A curious, brave eleven-year-old who moves to a new home and finds a secret door to a world that seems better than her own.</p>
+            </div>
+          </article>
+          <article class="entry">
+            <img class="photo photo-other-mother" src="images/character-other-mother.jpeg" alt="The Other Mother">
+            <div>
+              <h2>The Other Mother (The Beldam)</h2>
+              <p class="voice">Voice: Teri Hatcher</p>
+              <p>The ruler of the Other World. She looks like the perfect, loving mother, but something darker hides behind her kindness.</p>
+            </div>
+          </article>
+          <article class="entry">
+            <img class="photo photo-cat" src="images/character-cat.jpeg" alt="The Cat">
+            <div>
+              <h2>The Cat</h2>
+              <p class="voice">Voice: Keith David</p>
+              <p>A sarcastic, mysterious black cat with no name. He can speak in the Other World and appears and disappears whenever he likes.</p>
+            </div>
+          </article>
+          <article class="entry">
+            <img class="photo photo-wybie" src="images/character-wybie.webp" alt="Wybie Lovat">
+            <div>
+              <h2>Wybie Lovat</h2>
+              <p class="voice">Voice: Robert Bailey Jr.</p>
+              <p>A talkative, nervous boy who lives nearby and is the grandson of Coraline’s landlady. He becomes Coraline’s friend.</p>
+            </div>
+          </article>
+        </div>
+        <p class="scroll-hint">Scroll inside the plate to meet everyone ↓</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>
