@@ -1,0 +1,109 @@
+*{
+    box-sizing:border-box;
+    
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color:rgb(225, 244, 143);
+}
+
+.home-icon {
+  border-radius:50%;
+  background-color: white;
+  width:50px;
+  height:50px;
+  position:fixed;
+  right:10px;
+  top:10px;
+  padding:5px;
+  box-shadow: 2px 1px 5px #335585;
+  text-decoration: none; 
+  z-index:1;
+}
+
+.home-png {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.parent{
+    position:relative;
+}
+.header_image{
+    width:100vw;
+    height:100vh;
+    object-fit: cover;
+    display:block;
+    filter:blur(4px);
+    
+}
+
+.poster_img{
+    width:400px;
+    height:550px;
+    position: absolute;
+    top:100px;
+    left:850px;
+
+}
+
+h1{
+    font-size: 100px;
+    color: rgb(242, 242, 141); 
+    position:absolute; 
+    top: 100px;
+    left: 100px;
+    font-family: "cofo-raffine", serif;
+    font-weight: 400;
+    font-style: normal; 
+    border-top: 2px dashed rgb(242, 242, 141); 
+
+}
+    
+
+.line-break{
+    position:absolute;
+    top:100px;
+    left:0px;
+}
+
+.Arietty{
+    position:absolute;
+    top:170px;
+    left:155px;
+    color: rgb(245, 120, 176); 
+    font-family: "cofo-raffine", serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 150px;
+}
+
+h3{
+    font-size:30px;
+    position:absolute;
+    top:410px;
+    left:450px;
+    color: rgb(242, 242, 141); 
+    font-family: "cofo-raffine", serif;
+    font-weight: 400;
+    font-style: normal; 
+}
+
+.content{
+    width:450px;
+    position:absolute;
+    top:500px;
+    left:200px;
+    color: rgb(242, 242, 141); 
+    font-family: "cofo-raffine", serif;
+    font-weight: 500;
+    font-style: normal; 
+    background-color: rgb(245, 120, 176); 
+    padding:8px;
+    
+    
+}
