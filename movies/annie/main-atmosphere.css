@@ -1,0 +1,66 @@
+
+body { background:#130b19; }
+.stage { background:linear-gradient(#170b2226,#12071755),url("images/dining-room.png") center/cover; }
+.table { background:linear-gradient(#32140b12,#180b1266),url("images/walnut-table.png") center/cover; box-shadow:inset 0 1em 4em #14061288; }
+.edge { background:linear-gradient(#19090c50,#160a1688),url("images/walnut-table.png") center/cover; border-color:#7b5436; }
+.car::after { border-color:#967047; background:linear-gradient(100deg,#2e111cd9,#683041bf,#251019e8),url("images/walnut-table.png") center/cover; box-shadow:inset 0 .25em .5em #e0b77b40,inset 0 -.5em 1em #0007,0 .7em 1em #10051380; }
+.deck { border-color:#896845; background:linear-gradient(#170a14,#4d2630); }
+.wheel { background:radial-gradient(circle at 35% 30%,#d0aa6b,#77552e 65%,#38251c); border-color:#3a241b; box-shadow:inset 0 0 .4em #ffe0a050; }
+.item-label { font-family:"Snell Roundhand","Apple Chancery","Segoe Script",cursive; font-size:2.1em; font-weight:400; border:0; border-radius:0; padding:.3em .55em; color:#493326; background:linear-gradient(105deg,#bda077,#e1cda7,#c4a67c); box-shadow:.1em .2em .2em #10050b70; clip-path:polygon(0 12%,8% 0,98% 3%,100% 95%,60% 100%,5% 97%); }
+.replay { font-family:"Snell Roundhand","Apple Chancery",cursive; font-size:2em; border:1px solid #ad8b60; background:#241321bb; color:#ecdbbb; }
+.title-logo { width:30em; filter:invert(1) drop-shadow(0 .3em .4em #0008); }
+
+/* The same antique train asset used in the detail navigation */
+.train::before {
+ content:""; position:absolute; pointer-events:none;
+ width:36.83em; height:110.5em; left:50%; top:50%;
+ transform:translate(-50%,-50%) rotate(90deg);
+ background:url("images/antique-train.png") center/100% 100% no-repeat;
+ filter:drop-shadow(.6em .6em .5em #10080c88); z-index:0;
+}
+.train .deck,.train .wheel,.train .coupler,.train .engine { display:none; }
+.train .car::after { display:none; }
+.train .car { width:18em; height:30.5em; z-index:1; }
+.train .car:nth-child(1) { left:57em; }
+.train .car:nth-child(2) { left:38em; }
+.train .car:nth-child(3) { left:19em; }
+.train .car:nth-child(4) { left:0; }
+.train .item { left:1.5em; width:15em; bottom:12em; }
+.train .item-cat { --h:15em; }
+.train .item-doll { --h:17em; }
+.train .item-cake,.train .item-button { --h:14em; }
+.train .item-label { bottom:5.2em; font-size:1.65em; padding:.25em .5em; }
+
+/* Side elevation, with cargo behind the low wagon walls */
+.train { height:30.5em; }
+.train::before { display:none; }
+.train::after {
+ content:""; position:absolute; left:0; top:0;
+ width:110.5em; height:36.83em;
+ background:url("images/antique-train-side.png") center/100% 100% no-repeat;
+ pointer-events:none; z-index:2;
+ filter:drop-shadow(0 .5em .5em #12070a80);
+}
+.train .car { z-index:auto; }
+.train .car:nth-child(1) { left:1em; }
+.train .car:nth-child(2) { left:21em; }
+.train .car:nth-child(3) { left:41em; }
+.train .car:nth-child(4) { left:61em; }
+.train .item { bottom:9em; left:1.5em; width:15em; z-index:1; }
+.train .item-cat { --h:17em; }
+.train .item-doll { --h:19em; }
+.train .item-cake,.train .item-button { --h:16em; }
+.train .item-label { z-index:3; bottom:3.4em; font-size:1.5em; }
+
+/* Dimensional foreground props */
+.track {
+ top:62.7em; height:10em; left:6em; width:148em;
+ border:0; background:url("images/realistic-track.png") center/100% 100% no-repeat;
+ filter:drop-shadow(0 .3em .25em #10060a99);
+}
+.hand { bottom:-1em; width:30em; height:auto; object-fit:contain; pointer-events:none; filter:drop-shadow(0 .5em .5em #16081088); }
+.hand.l { left:4em; }
+.hand.r { right:4em; transform:scaleX(-1); }
+
+/* Stop earlier, near the inner edge of the right hand */
+.train { left:22em; }
