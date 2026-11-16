@@ -1,97 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Nightmare Before Christmas</title>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nightmare Before Christmas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main class="stage">
+    <div class="moon" aria-hidden="true"></div>
+    <img class="duo" src="jack-sally.png" alt="Jack and Sally silhouette on the spiral hill">
 
-  <div class="page">
+    <!-- Frame 1 -->
+    <section class="frame frame--hero">
+      <h1 class="title">
+        <span class="row"><span class="small">The</span><span class="big">Nightmare</span></span>
+        <span class="row"><span class="small">Before</span><span class="big">Christmas</span></span>
+      </h1>
+    </section>
 
-    <div class="left">
+    <!-- Frame 2 -->
+    <section class="frame frame--overview">
+      <svg class="scenery" viewBox="0 0 1512 982" preserveAspectRatio="none" aria-hidden="true">
+        <!-- ground swoosh -->
+        <path fill="#000" d="M0 527 C450 470, 1000 420, 1512 305 L1512 982 L0 982 Z"/>
+        <!-- fills the gap under the hill image down to the ground -->
+        <path fill="#000" d="M760 320 L1395 320 L1400 520 L560 700 L560 458 C630 445, 680 410, 698 362 C715 345, 735 330, 760 320 Z"/>
+      </svg>
 
-      <div class="nav">
-        <div class="menu-icon">
-          <span></span>
-          <span></span>
-        </div>
-        <a href="#">ABOUT</a>
-        <a href="#">CHARACTERS</a>
-        <a href="#">SONGS</a>
-        <a href="#">GALLERY</a>
+      <ul class="facts reveal">
+        <li>Release Year: 1993</li>
+        <li>Director: Henry Selick</li>
+        <li>Producer: Tim Burton</li>
+        <li>Music: Danny Elfman</li>
+        <li>Genre: Dark Fantasy, Musical,<br>Animation</li>
+        <li>Runtime: 76 Minutes</li>
+        <li>Animation Style: Stop Motion</li>
+      </ul>
+
+      <div class="overview reveal">
+        <h2>Overview</h2>
+        <p>The Nightmare Before Christmas is a stop-motion animated fantasy film released in 1993. The story follows Jack Skellington, the Pumpkin King of Halloween Town, who discovers Christmas Town and becomes fascinated by the holiday. The movie combines spooky Halloween imagery with the magic of Christmas.</p>
       </div>
 
-      <div class="hero">
-        <h1>The Nightmare<br>Before Christmas</h1>
-        <p>
-          Jack Skellington, the Pumpkin King of Halloween Town, is tired of the
-          same scary holiday every year. When he finds a secret door to Christmas
-          Town, he decides to take over Christmas, with very strange results.
-          A stop-motion musical from Tim Burton and Henry Selick.
-        </p>
-        <a href="#" class="more">LEARN MORE <span class="arrow"></span></a>
-      </div>
+      <div class="rule reveal"></div>
+    </section>
+  </main>
 
-      <div class="bottom">
-        <div class="dots">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div>
-          <p class="number">01</p>
-          <p class="small-title">VOICE CAST</p>
-          <p class="name">Chris Sarandon</p>
-          <p class="name">Catherine O'Hara</p>
-          <p class="name">Danny Elfman</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="middle">
-      <img src="poster.jpg" alt="The Nightmare Before Christmas poster">
-    </div>
-
-    <div class="right">
-
-      <div class="follow">
-        FOLLOW US
-        <span>f</span>
-        <span>▶</span>
-        <span>X</span>
-      </div>
-
-      <div class="info">
-        <div class="info-item">
-          <p class="small-title">PREMIERE</p>
-          <p class="value">October 1993</p>
-        </div>
-        <div class="info-item">
-          <p class="small-title">DIRECTOR</p>
-          <p class="value">Henry Selick</p>
-        </div>
-        <div class="info-item">
-          <p class="small-title">MUSIC BY</p>
-          <p class="value">Danny Elfman</p>
-        </div>
-        <div class="info-item">
-          <p class="small-title">GENRE</p>
-          <p class="value">Musical, Fantasy</p>
-        </div>
-      </div>
-
-      <a href="#" class="trailer">
-        <span class="play">▶</span>
-        WATCH TRAILER
-      </a>
-
-    </div>
-
-  </div>
-
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
 </body>
 </html>

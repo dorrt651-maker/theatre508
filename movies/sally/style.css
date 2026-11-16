@@ -107,3 +107,59 @@ h3{
     
     
 }
+
+@media (max-width:430px){
+    body{
+        height:932px;
+        width: 393px;
+    }
+
+    h1{
+        font-size:70px;
+        top:50px;
+        left: 10px;
+        
+    }
+
+    .line-break{
+        top:80px;
+    }
+
+    .Arietty{
+        font-size:90px;
+        top:150px;
+        left: 15px;
+    }
+
+    .poster_img{
+        width:250px;
+        height:350px;
+        top:350px;
+        left:40px;
+    }
+
+    h3{
+        font-size:20px;
+        top:290px;
+        left:15px;
+    }
+
+    .header_image{
+        height:130vh;
+    }
+
+    .content{
+        width:300px;
+        left:15px;
+        top:750px;
+    }
+
+    .home-icon{
+        width:30px;
+        height:30px;
+        left:270px;
+
+    }
+
+    
+}
