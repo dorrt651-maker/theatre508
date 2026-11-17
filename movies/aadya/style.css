@@ -1,4 +1,8 @@
 body {background-image: url("background.jpg");}
 h1 {font-family: Playfair Display;}
 section {font-family: Roboto Mono}
-
+.blue {background-color: #005485}
+.green {background-color: #017A62}
+.pink {background-color: #F40066}
+.red {background-color: #E10000}
+.yellow {background-color: #FABE00}
