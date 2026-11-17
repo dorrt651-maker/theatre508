@@ -70,32 +70,35 @@ h3 {
 
 /* MEDIA QUERY */
 
-@media (max-width:600px) {
+@media only screen and (max-width:600px) {
 
   .container {
     display:grid;
-    grid-template-columns:none;
+    grid-template-columns: none;
     grid-template-rows: 1fr 1fr;
-    justify-content: center;
     gap: 0px;
+    margin:25px;
+    margin-top: 70px;
+}
+
+  .poster-image {
+    width:80%;
+    height:auto;
   }
 
   .poster {
-    align-self: center;
+    justify-self:center;
   }
 
   .text-box {
-    margin-top:50px;
-    align-self: stretch;
+   justify-self: none;
+  align-self: center;   
   }
 
   h1, h2, h3, h4, p {
     text-align:center;
   }
 
-  .poster-image {
-  max-width: 100%;
-  height: auto;
-  }
+
 
 }
