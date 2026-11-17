@@ -149,7 +149,7 @@ h1:hover {
         overflow-x: hidden;
     }
 
-    /* Movie poster grid */
+
     .img-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
@@ -165,7 +165,7 @@ h1:hover {
         object-fit: cover;
     }
 
-    /* Header text */
+    
     h1 {
         font-size: 27px;
         top: 50%;
@@ -173,7 +173,6 @@ h1:hover {
         white-space: nowrap;
     }
 
-    /* Left curtain */
     .curtain {
         width: 50%;
         height: auto;
@@ -181,7 +180,7 @@ h1:hover {
         left: -25%;
     }
 
-    /* Right curtain */
+   
     .curtain-2 {
         width: 50%;
         height: auto;

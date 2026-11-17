@@ -150,3 +150,62 @@ header p {
   height: 100%;
   object-fit: contain;
 }
+
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 15px 20px;
+    }
+
+    header {
+        font-size: 14px;
+    }
+
+    .year {
+        margin-right: 0;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .left {
+        padding: 0;
+    }
+
+    .movie-title {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .movie-title h1 {
+        font-size: 36px;
+    }
+
+    .movie-title h2 {
+        font-size: 28px;
+    }
+
+    .right {
+        padding-right: 0;
+    }
+
+    .movie-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .synopsis {
+        margin-top: 30px;
+    }
+
+    .home-icon {
+        width: 40px;
+        height: 40px;
+        right: 10px;
+        top: 10px;
+    }
+}
