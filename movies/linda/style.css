@@ -181,4 +181,157 @@ font-size: clamp(100px, 100vw, 280px);
   object-fit: contain;
 }
 
+@media screen and (max-width: 440px) {
 
+  .page {
+    min-height: 100svh;
+    padding: 15px;
+    overflow: hidden;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+.movie-title {
+  display: grid;
+  grid-template-columns: 58px 140px 110px 120px;
+  width: fit-content;
+  margin: 50px auto 25px;
+  font-size: clamp(38px, 11vw, 48px);
+  justify-content: center;
+  position: relative;
+  left: -20px;
+}
+
+  .night {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+.bone {
+    grid-column: 3;
+    grid-row: 1;
+    position: relative;
+    transform: scale(0.65);
+    top: 0;
+    min-width: 0;
+    width: 75px;
+    margin-left: -5px;
+}
+
+  .at {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+  .the {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .museum {
+    grid-column: 3;
+    grid-row: 3;
+  }
+
+  .run-time {
+    grid-column: 3;
+    grid-row: 5;
+    font-size: 10px;
+  }
+
+  .year {
+    grid-column: 4;
+    grid-row: 5;
+    font-size: 20px;
+  }
+
+  .movie-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  .poster {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .poster img {
+    width: 100%;
+    height: auto;
+  }
+
+  .details {
+    width: 90%;
+    gap: 18px;
+  }
+
+  .detail-row h3 {
+    font-size: 17px;
+    margin-left: 20px;
+  }
+
+  .detail-row p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-left: 20px;
+  }
+
+  .curtain-left,
+  .curtain-right {
+    width: 75px;
+    height: 1000px;
+    height: clamp(100svh, 115vw, 140svh);
+    transform: scaleY(2);
+    transform-origin: top;
+  }
+   .lights {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100svh;
+        overflow: visible;
+        z-index: 2;
+    }
+
+    .light-one,
+    .light-two {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        height: 100svh;
+        width: auto;
+        margin: 0;
+    }
+
+    .light-one {
+        transform: translate(-50%, -50%) translateX(-8vw);
+    }
+
+    .light-two {
+        transform: translate(-50%, -50%) translateX(8vw);
+    }
+
+    .light-one svg,
+    .light-two svg {
+      display: block;
+      height: 100%;
+      width: auto;
+    }
+  .home-icon {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+
+}
