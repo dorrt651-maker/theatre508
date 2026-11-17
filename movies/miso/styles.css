@@ -3,6 +3,8 @@ body {
 }
   * {
     box-sizing:border-box;
+    margin: 0;
+    padding: 0;
   }
 
 h1 {
@@ -74,7 +76,7 @@ h3 {
 
 /* MEDIA QUERY */
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:440px) {
 
 .container {
   display: grid;
@@ -93,6 +95,11 @@ h3 {
 .text-box {
   align-self:start;
   text-align:center;
+  margin:30px;
+}
+
+h3, h1 {
+  padding:0px 10px;
 }
 
 }
